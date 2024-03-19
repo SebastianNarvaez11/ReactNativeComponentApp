@@ -6,11 +6,13 @@ import {
   Text,
   View,
 } from 'react-native';
-import {colors} from '../../../config/theme/theme';
 import {useAnimation} from '../../hooks/useAnimation';
 import {useState} from 'react';
+import {useThemeStore} from '../../store/themeStore';
 
 export const Animation101Screen = () => {
+  const {colors} = useThemeStore();
+
   const [isHide, setIsHide] = useState(false);
 
   const {
@@ -34,6 +36,7 @@ export const Animation101Screen = () => {
           style={[
             styles.purpleBox,
             {
+              backgroundColor: colors.primary,
               opacity: animatedOpacity,
               transform: [
                 {translateX: animatedTranslateX},
@@ -76,7 +79,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   purpleBox: {
-    backgroundColor: colors.primary,
     width: 150,
     height: 150,
   },

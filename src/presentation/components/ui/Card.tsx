@@ -2,13 +2,14 @@ import {PropsWithChildren} from 'react';
 
 import {StyleProp, ViewStyle} from 'react-native';
 import {View} from 'react-native';
-import {colors} from '../../../config/theme/theme';
+import {useThemeStore} from '../../store/themeStore';
 
 interface Props extends PropsWithChildren {
   style?: StyleProp<ViewStyle>;
 }
 
 export const Card = ({style, children}: Props) => {
+  const {colors} = useThemeStore();
   return (
     <View
       style={[

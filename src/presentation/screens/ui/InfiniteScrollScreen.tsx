@@ -1,14 +1,15 @@
 import {useState} from 'react';
 import {ActivityIndicator, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import {colors} from '../../../config/theme/theme';
 import {FadeInImage} from '../../components/ui/FadeInImage';
+import {useThemeStore} from '../../store/themeStore';
 
 interface ListItemProps {
   number: number;
 }
 
 export const InfiniteScrollScreen = () => {
+  const {colors} = useThemeStore();
   const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
 
   const loadMore = () => {

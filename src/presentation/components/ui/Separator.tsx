@@ -1,11 +1,12 @@
 import {StyleProp, View, ViewStyle} from 'react-native';
-import {colors} from '../../../config/theme/theme';
+import {useThemeStore} from '../../store/themeStore';
 
 interface Props {
   style?: StyleProp<ViewStyle>;
 }
 
 export const Separator = ({style}: Props) => {
+  const {colors} = useThemeStore();
   return (
     <View
       style={{

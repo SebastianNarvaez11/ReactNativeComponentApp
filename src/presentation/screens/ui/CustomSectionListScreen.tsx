@@ -3,9 +3,9 @@ import {Title} from '../../components/ui/Title';
 import {Card} from '../../components/ui/Card';
 import {SectionList, Text, useWindowDimensions} from 'react-native';
 import {SubTitle} from '../../components/ui/SubTitle';
-import {colors} from '../../../config/theme/theme';
 import {Separator} from '../../components/ui/Separator';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {useThemeStore} from '../../store/themeStore';
 
 interface Houses {
   title: string;
@@ -90,6 +90,7 @@ const houses: Houses[] = [
 ];
 
 export const CustomSectionListScreen = () => {
+  const {colors} = useThemeStore();
   const {height} = useWindowDimensions();
   const {top} = useSafeAreaInsets();
 

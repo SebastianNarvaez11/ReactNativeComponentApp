@@ -1,5 +1,5 @@
 import {Platform, StyleSheet, Switch, Text, View} from 'react-native';
-import {colors} from '../../../config/theme/theme';
+import {useThemeStore} from '../../store/themeStore';
 
 interface Props {
   isOn: boolean;
@@ -9,6 +9,8 @@ interface Props {
 }
 
 export const CustomSwitch = ({isOn, text, onChange}: Props) => {
+  const {colors} = useThemeStore();
+
   return (
     <View style={styles.switchRow}>
       {text && <Text style={{color: colors.text}}>{text}</Text>}

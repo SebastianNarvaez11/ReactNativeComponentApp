@@ -6,6 +6,8 @@ import {AlertScreen} from '../screens/alerts/AlertScreen';
 import {PullToRefreshScreen} from '../screens/ui/PullToRefreshScreen';
 import {CustomSectionListScreen} from '../screens/ui/CustomSectionListScreen';
 import {InfiniteScrollScreen} from '../screens/ui/InfiniteScrollScreen';
+import {SlidesScreen} from '../screens/ui/SlidesScreen';
+import {ChangeThemeScreen} from '../screens/theme/ChangeThemeScreen';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +47,16 @@ export const RootNavigationStack = () => {
       <Stack.Screen
         name="InfiniteScrollScreen"
         component={InfiniteScrollScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SlidesScreen"
+        component={SlidesScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ChangeThemeScreen"
+        component={ChangeThemeScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

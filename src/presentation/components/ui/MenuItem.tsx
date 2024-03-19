@@ -1,8 +1,8 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-import {colors} from '../../../config/theme/theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {Separator} from './Separator';
+import {useThemeStore} from '../../store/themeStore';
 
 interface Props {
   name: string;
@@ -21,6 +21,7 @@ export const MenuItem = ({
   isLast = false,
 }: Props) => {
   const navigation = useNavigation<any>();
+  const {colors} = useThemeStore();
 
   return (
     <>
